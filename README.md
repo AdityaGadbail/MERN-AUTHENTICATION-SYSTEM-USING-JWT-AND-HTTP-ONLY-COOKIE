@@ -1,5 +1,11 @@
-- STEPS TO START THE PROJECT
-step 1 : npm install (install all the packages for specific folder)
-step 2 : read the .env.example file and create .env file and add your secret and connection keys
-step 3 : For Client - run npm run dev
-step 4 : For Server - node server.js
+## STEPS TO START THE PROJECT
+
+###  Step 1: Install Dependencies
+Install all packages in both `client/` and `server/` folders:
+
+### step 2 : Add .env file 
+read the .env.example file and create .env file based on the .env.example file 
+
+### step 3 : For Client - run npm run dev
+
+### step 4 : For Server - node server.js
