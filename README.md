@@ -27,7 +27,7 @@ A secure and modern full-stack authentication system built using the **MERN Stac
 **Frontend:**
 - React.js
 - Axios
-- Tailwind CSS or CSS Modules (if used)
+- Tailwind CSS 
 - React Router DOM
 
 **Backend:**
