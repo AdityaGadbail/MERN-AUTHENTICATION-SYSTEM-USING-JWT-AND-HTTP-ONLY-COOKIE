@@ -44,7 +44,7 @@ A secure and modern full-stack authentication system built using the **MERN Stac
 ## 🛠️ Installation & Setup
 
 ###  Step 1: Install Dependencies
-Install all packages in both `client/` and `server/` folders:
+Install all packages in both `client/` and `server/` folders:  npm i
 
 ### step 2 : Add .env file 
 read the .env.example file and create .env file based on the .env.example file 
