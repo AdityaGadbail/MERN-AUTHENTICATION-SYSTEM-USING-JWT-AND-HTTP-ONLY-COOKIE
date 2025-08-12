@@ -2,10 +2,9 @@
 
 A secure and modern full-stack authentication system built using the **MERN Stack** (MongoDB, Express.js, React.js, Node.js). This project provides robust authentication with JWT, protected routes, and security best practices for real-world production apps.
 
-<img width="1919" height="867" alt="image" src="https://github.com/user-attachments/assets/248e4ee2-1b24-4865-855f-aba4491624f6" />
-<img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/22c1b6ff-3791-4bcf-b932-d2a75dfd46f0" />
-<img width="1918" height="865" alt="image" src="https://github.com/user-attachments/assets/2adfb67d-5cfb-438d-80ae-8bca8a3ffea2" />
-<img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/4bcb33d7-83c0-41f5-9e30-bfef1261f813" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/248e4ee2-1b24-4865-855f-aba4491624f6" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/2adfb67d-5cfb-438d-80ae-8bca8a3ffea2" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/4bcb33d7-83c0-41f5-9e30-bfef1261f813" />
 
 
 
