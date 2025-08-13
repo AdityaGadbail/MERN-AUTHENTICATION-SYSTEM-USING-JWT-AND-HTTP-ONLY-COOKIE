@@ -41,6 +41,7 @@ A secure and modern full-stack authentication system built using the **MERN Stac
 - Express.js
 - MongoDB (with Mongoose)
 - JSON Web Token (JWT)
+- HTTP-Only cookies
 - Bcrypt for password hashing
 - dotenv for environment variables
 - CORS middleware
