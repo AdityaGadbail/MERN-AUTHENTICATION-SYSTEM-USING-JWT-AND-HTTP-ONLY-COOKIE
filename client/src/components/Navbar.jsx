@@ -46,8 +46,8 @@ const Navbar = () => {
         <img src={assets.myLogo} alt="" className="w-28 sm:w-32" />
         <div>
           <ul className="flex gap-2  sm:gap-8 pointer">
-            <li className=" hover:text-gray-700">About</li>
-            <li className=" hover:text-gray-700">Contact Me</li>
+            <li onClick={()=> navigate('/about')} className=" hover:text-gray-700 cursor-pointer">About</li>
+            <li onClick={()=> navigate('/contact')} className=" hover:text-gray-700 cursor-pointer">Contact Me</li>
           </ul>
         </div>
         {userData ? (
