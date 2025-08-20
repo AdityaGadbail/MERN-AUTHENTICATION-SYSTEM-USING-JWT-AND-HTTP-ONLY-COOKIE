@@ -9,7 +9,7 @@ A secure and modern full-stack authentication system built using the **MERN Stac
 
 
 
----
+---  
 
 ## 🚀 Features
 
