@@ -8,7 +8,7 @@ A secure and modern full-stack authentication system built using the **MERN Stac
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/4bcb33d7-83c0-41f5-9e30-bfef1261f813" />
    
 
-
+                     
 ---        
                          
 ## 🚀 Features
