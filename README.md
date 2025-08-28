@@ -12,7 +12,7 @@ A secure and modern full-stack authentication system built using the **MERN Stac
 ---        
                                 
 ## 🚀 Features
-
+                  
 - 🔐 **JWT (JSON Web Token) Authentication**
 - 🔄 **User Login & Registration** with hashed passwords (bcrypt)
 - ✅ **Protected Routes** for authenticated users only
