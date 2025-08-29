@@ -6,7 +6,7 @@ A secure and modern full-stack authentication system built using the **MERN Stac
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/248e4ee2-1b24-4865-855f-aba4491624f6" />
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/2adfb67d-5cfb-438d-80ae-8bca8a3ffea2" />
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/4bcb33d7-83c0-41f5-9e30-bfef1261f813" />
-   
+              
 
                      
 ---        
