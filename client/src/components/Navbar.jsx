@@ -5,11 +5,14 @@ import { useContext } from "react";
 import { appContext } from "../context/appContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false); // For btn to be disabled after submitting
 
   const sendVerificationOtp = async () => {
+    setIsSubmitting(true);
     try {
       axios.defaults.withCredentials = true;
       const { data } = await axios.post(
@@ -23,6 +26,8 @@ const Navbar = () => {
       }
     } catch (error) {
       toast.error(error.message);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -43,11 +48,16 @@ const Navbar = () => {
     <>
       {" "}
       <div className="w-full flex justify-between items-center p-4 sm:p-6 sm:px-24   max-h-20 bg-gradient-to-r from-pink-300 to-purple-400">
-        <img src={assets.myLogo} alt="" className="w-28 sm:w-32" />
+        <img 
+          src={assets.myLogo} 
+          alt="" 
+          onClick={() => navigate("/")}
+          className="w-28 sm:w-32 cursor-pointer" 
+        />
         <div>
           <ul className="flex gap-2  sm:gap-8 pointer">
-            <li className=" hover:text-gray-700">About</li>
-            <li className=" hover:text-gray-700">Contact Me</li>
+            <li onClick={()=> navigate('/about')} className=" hover:text-gray-700 cursor-pointer">About</li>
+            <li onClick={()=> navigate('/contact')} className=" hover:text-gray-700 cursor-pointer">Contact Me</li>
           </ul>
         </div>
         {userData ? (
@@ -58,7 +68,12 @@ const Navbar = () => {
                 {userData && !userData.isAccountVerified && (
                   <li
                     onClick={sendVerificationOtp}
-                    className="py-1  px-2 hover:bg-pink-200 hover:text-black cursor-pointer  text-center rounded-lg"
+                    // className="py-1  px-2 hover:bg-pink-200 hover:text-black cursor-pointer  text-center rounded-lg"
+                    className={`py-1  px-2 hover:bg-pink-200 hover:text-black cursor-pointer  text-center rounded-lg ${
+                      isSubmitting
+                        ? "bg-gray-400 cursor-not-allowed border-2 border-blue-500 outline outline-blue-400"
+                        : ""
+                    }`}
                   >
                     Verify Email
                   </li>

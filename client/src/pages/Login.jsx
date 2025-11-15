@@ -6,18 +6,21 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  const { backendUrl, setIsLoggedin , getUserData} = useContext(appContext);
+  const { backendUrl, setIsLoggedin, getUserData } = useContext(appContext);
 
   const [state, setState] = useState("Sign Up");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [isSubmitting, setIsSubmitting] = useState(false); // For btn to be disabled after submitting
+
   const navigate = useNavigate();
 
   const onsubmitHandler = async (e) => {
     try {
       e.preventDefault(); // It will stop from reloading the page after submit
+      setIsSubmitting(true); // btn disabled
 
       axios.defaults.withCredentials = true; // It will send the cookie
 
@@ -49,6 +52,8 @@ const Login = () => {
       }
     } catch (error) {
       toast.error(error.message);
+    } finally {
+      setIsSubmitting(false);
     }
   };
    
@@ -121,7 +126,14 @@ const Login = () => {
             Forgot password?
           </p>
 
-          <button className="w-full rounded-full py-2.5 bg-gradient-to-r from-indigo-500 to-purple-800 text-white font-medium">
+          <button 
+          // className="w-full rounded-full py-2.5 bg-gradient-to-r from-indigo-500 to-purple-800 text-white font-medium"
+          className={`w-full rounded-full py-2.5 bg-gradient-to-r from-indigo-500 to-purple-800 text-white font-medium ${
+            isSubmitting
+              ? "bg-gray-400 cursor-not-allowed border-2 border-blue-500 outline outline-blue-400"
+              : "bg-blue-600 hover:bg-blue-700"
+          }`}
+          >
             {state}
           </button>
         </form>

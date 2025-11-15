@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect,useState } from "react";
 import { assets } from "../assets/assets";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -10,8 +10,10 @@ const EmailVerify = () => {
   const { backendUrl, isLoggedin, userData, getUserData } =
     useContext(appContext);
 
+  const [isSubmitting, setIsSubmitting] = useState(false); // For btn to be disabled after submitting
+
   const navigate = useNavigate();
-  
+
   const inputRefs = React.useRef([]);
 
   const handleInput = (e, index) => {
@@ -34,9 +36,9 @@ const EmailVerify = () => {
     });
   };
 
-  const onSubmitHandler = async (e) => {
+  const sendVerificationOtp = async () => {
+    setIsSubmitting(true);
     try {
-      e.preventDefault();
       const otpArray = inputRefs.current.map((e) => e.value);
       const otp = otpArray.join("");
       const { data } = await axios.post(
@@ -53,6 +55,33 @@ const EmailVerify = () => {
       }
     } catch (error) {
       toast.error(error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const onSubmitHandler = async (e) => {
+    try {
+      e.preventDefault();
+      setIsSubmitting(true);
+      const otpArray = inputRefs.current.map((e) => e.value);
+      const otp = otpArray.join("");
+      const { data } = await axios.post(
+        backendUrl + "/api/auth/verify-account",
+        { otp }
+      );
+
+      if (data.sucess) {
+        toast.success(data.message);
+        getUserData();
+        navigate("/");
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }finally{
+      setIsSubmitting(false);
     }
   };
 
@@ -67,7 +96,7 @@ const EmailVerify = () => {
         onClick={() => navigate("/")}
         src={assets.myLogo}
         alt=""
-        className="absolute left-5 sm:left-20 top-0  sm:w-32 cursor-pointer shadow-lg w-96 text-sm"
+        className="absolute left-5 sm:left-20 top-0 w-28 sm:w-32 cursor-pointer shadow-lg"
       />
 
       <form
@@ -97,7 +126,13 @@ const EmailVerify = () => {
               />
             ))}
         </div>
-        <button className="py-3 text-white font-semibold text-base bg-gradient-to-r from-indigo-500 to-purple-600 w-full rounded-full ">
+        <button 
+         className={`py-3 text-white font-semibold text-base bg-gradient-to-r from-indigo-500 to-purple-600 w-full rounded-full ${
+            isSubmitting
+              ? "bg-gray-400 cursor-not-allowed border-2 border-blue-500 outline outline-blue-400"
+              : "bg-blue-600 hover:bg-blue-700"
+          }`} 
+          disabled={isSubmitting}>
           Verify Email
         </button>
       </form>
