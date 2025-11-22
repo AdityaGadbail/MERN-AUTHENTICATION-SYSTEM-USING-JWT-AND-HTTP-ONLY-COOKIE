@@ -119,12 +119,15 @@ const Login = () => {
             />
           </div>
 
+       {state === 'Login' && (
+          
           <p
             onClick={() => navigate("/reset-password")}
             className="mb-4 cursor-pointer text-indigo-500"
           >
             Forgot password?
           </p>
+        )}
 
           <button 
           // className="w-full rounded-full py-2.5 bg-gradient-to-r from-indigo-500 to-purple-800 text-white font-medium"

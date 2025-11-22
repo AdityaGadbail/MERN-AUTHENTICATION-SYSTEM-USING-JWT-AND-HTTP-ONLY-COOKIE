@@ -17,7 +17,7 @@ const allowedOrigins = [
   process.env.FRONTEND_URL || 'http://localhost:5173',
   'http://localhost:5173',
   'https://mern-authentication-system-jw.vercel.app',
-  'https://mern-authentication-system-jw.vercel.app/*'
+  'https://mern-authentication-system-using-jwt-and.vercel.app'
 ];
 
 // MIDLEWARES
