@@ -46,7 +46,7 @@ const EmailVerify = () => {
         { otp }
       );
 
-      if (data.sucess) {
+      if (data.success) {
         toast.success(data.message);
         getUserData();
         navigate("/");
@@ -71,7 +71,7 @@ const EmailVerify = () => {
         { otp }
       );
 
-      if (data.sucess) {
+      if (data.success) {
         toast.success(data.message);
         getUserData();
         navigate("/");
